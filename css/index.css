@@ -39,7 +39,8 @@ p{
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: #FFFFFF;
+	background: url(../img/table.jpg) ;
+	background-size: cover;
 }
 .info{
 	position: fixed;
@@ -177,15 +178,15 @@ p{
 #nextFloder li.hover.active,
 #content li.hover.active,
 #list li.hover.active{
-	background-color:rgba(54,143,231,.2);
-	border: 1px solid rgba(54,143,231,.2);
+	background-color:rgba(250,250,250,.5);
+	border: 1px solid rgba(250,250,250,.5);
 	border-radius:5px ;
 }
 #nextFloder li.active,
 #content li.active,
 #list li.active{
-	background-color:rgba(120,143,231,.3);
-	border: 1px solid rgba(120,143,231,.3);
+	background-color:rgba(250,250,250,.3);
+	border: 1px solid rgba(250,250,250,.3);
 	border-radius:5px ;
 }
 #nextFloder li input,

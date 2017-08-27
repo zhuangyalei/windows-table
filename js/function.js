@@ -576,7 +576,18 @@ function  setEV(el,value,container){//文件夹设置事件
 			function end(e){
 				document.removeEventListener('mousemove',move);
 				document.removeEventListener('mouseup',end);
-				if(trash&&self&&getCollide(self,trash)){//判断最后点击的那个文件克隆的和trash是否碰撞
+				
+				var havetrash = true;
+				if(trash){
+					trash.classList.remove('hover');
+				}
+				activeFlder.forEach(data =>{//如果选中的里面有垃圾桶就不删除文件
+					if (data==trash) {
+						havetrash = false
+					}
+				});
+				
+				if(trash&&self&&getCollide(self,trash)&&havetrash){//判断最后点击的那个文件克隆的和trash是否碰撞
 					for(var i = 0; i < activeFlder.length; i++){
 						container.removeChild(activeFlder[i]);
 						data.list.forEach(function(value){
@@ -589,9 +600,6 @@ function  setEV(el,value,container){//文件夹设置事件
 				}
 				for(var i = 0; i < cloneFlder.length; i++){
 					container.removeChild(cloneFlder[i]);
-				}
-				if(trash){
-					trash.classList.remove('hover');
 				}
 				
 			}
